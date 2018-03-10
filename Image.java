@@ -42,6 +42,7 @@ public class Image {
 		System.out.println(y);
 		System.out.println();*/
 		y = pixels.length - y - 1;
+		if (x >= 500 || x < 0 || y >= 500 || y < 0) return;
 		pixels[y][x] = color;
 	}
 

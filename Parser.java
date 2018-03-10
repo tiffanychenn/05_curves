@@ -35,6 +35,21 @@ public class Parser {
                 double[] point1 = new double[] {Double.parseDouble(args[3]), Double.parseDouble(args[4]), Double.parseDouble(args[5]), 1};
                 edge.addEdge(point0, point1);
             }
+            else if (c.equals("circle")){
+                n ++;
+                String[] args = commands.get(n).split(" ");
+                edge.addCircle(Double.parseDouble(args[0]), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]));
+            }
+            else if (c.equals("bezier")){
+                n ++;
+                String[] args = commands.get(n).split(" ");
+                edge.addCurve(Double.parseDouble(args[0]), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]), Double.parseDouble(args[4]), Double.parseDouble(args[5]), Double.parseDouble(args[6]), Double.parseDouble(args[7]), "bezier");
+            }
+            else if (c.equals("hermite")){
+                n ++;
+                String[] args = commands.get(n).split(" ");
+                edge.addCurve(Double.parseDouble(args[0]), Double.parseDouble(args[1]), Double.parseDouble(args[2]), Double.parseDouble(args[3]), Double.parseDouble(args[4]), Double.parseDouble(args[5]), Double.parseDouble(args[6]), Double.parseDouble(args[7]), "hermite");
+            }
             else if (c.equals("ident")){
                 trans.ident();
             }

@@ -1,7 +1,7 @@
 all: Main.java
 	javac Main.java
 	java Main
-	display image.png
+	display face.png
 	rm image.ppm
 run: all
 clean:
